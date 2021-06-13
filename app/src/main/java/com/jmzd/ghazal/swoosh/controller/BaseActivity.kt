@@ -1,4 +1,4 @@
-package com.jmzd.ghazal.swoosh
+package com.jmzd.ghazal.swoosh.controller
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

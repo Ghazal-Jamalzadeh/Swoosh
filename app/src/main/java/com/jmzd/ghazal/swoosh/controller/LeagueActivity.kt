@@ -1,15 +1,16 @@
-package com.jmzd.ghazal.swoosh
+package com.jmzd.ghazal.swoosh.controller
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.jmzd.ghazal.swoosh.EXTRA_LEAGUE
+import com.jmzd.ghazal.swoosh.R
 import com.jmzd.ghazal.swoosh.databinding.ActivityLeagueBinding
-import com.jmzd.ghazal.swoosh.databinding.ActivityWelcomeBinding
 
 class LeagueActivity : BaseActivity() {
-    var selectedLeague = "test"
+   var selectedLeague = ""
+  //  val player = Player("","")
     lateinit var binding: ActivityLeagueBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +20,6 @@ class LeagueActivity : BaseActivity() {
         binding = ActivityLeagueBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
     }
 
     fun onMensClicked(view: View) {
@@ -27,14 +27,14 @@ class LeagueActivity : BaseActivity() {
         binding.coedLeagueBtn.isChecked = false
 
         selectedLeague = "mens"
-        Toast.makeText(this, "${binding.womensLeagueBtn.text}", Toast.LENGTH_SHORT).show()
+//        player.league= "mens"
     }
 
     fun onWomensClicked(view: View) {
         binding.mensLeagueBtn.isChecked = false
         binding.coedLeagueBtn.isChecked = false
 
-        selectedLeague = "womens"
+       selectedLeague = "womens"
         Toast.makeText(this, "2", Toast.LENGTH_SHORT).show()
     }
 
@@ -49,11 +49,11 @@ class LeagueActivity : BaseActivity() {
     fun leagueNextClicked(view: View) {
         if (selectedLeague != "") {
             val skillActivity = Intent(this, SkillActivity::class.java)
-            skillActivity.putExtra(EXTRA_LEAGUE, selectedLeague)
+            skillActivity.putExtra(EXTRA_LEAGUE,selectedLeague)
             startActivity(skillActivity)
         } else {
             Toast.makeText(this, "Please select a league.", Toast.LENGTH_SHORT).show()
         }
     }
 
-    }
+}

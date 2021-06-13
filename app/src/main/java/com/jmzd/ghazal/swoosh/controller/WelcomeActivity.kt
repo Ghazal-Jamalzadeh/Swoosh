@@ -1,8 +1,8 @@
-package com.jmzd.ghazal.swoosh
+package com.jmzd.ghazal.swoosh.controller
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.jmzd.ghazal.swoosh.R
 import com.jmzd.ghazal.swoosh.databinding.ActivityWelcomeBinding
 
 class WelcomeActivity : BaseActivity() {
